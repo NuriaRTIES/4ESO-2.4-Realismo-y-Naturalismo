@@ -1,0 +1,1699 @@
+/* Style variables for theme customization */
+:root {
+    --bg-color: #FAF7F2;
+    --card-bg: #FFFFFF;
+    --text-primary: #2C2520;
+    --text-secondary: #5C524A;
+    --accent-primary: #5F6B52; /* Sage green */
+    --accent-secondary: #B06B50; /* Terracotta */
+    --accent-hover: #48523E;
+    --border-color: #E6DFD5;
+    --shadow-color: rgba(44, 37, 32, 0.08);
+    --font-header: "Playfair Display", Georgia, serif;
+    --font-body: "Lora", Georgia, serif;
+    --font-ui: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --transition-speed: 0.4s;
+}
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Scrollbar for scrollable panels */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #FAF7F2;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #D5CDBE;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #B0A595;
+}
+
+/* Header Styles */
+.app-header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    height: 60px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    z-index: 100;
+}
+
+.presentation-title {
+    font-family: var(--font-header);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.header-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 0.8rem;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    border-color: var(--accent-primary);
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Sidebar Drawer Styles */
+.sidebar, .notes-sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    width: 320px;
+    background-color: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.05);
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform var(--transition-speed) cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-sidebar {
+    right: 0;
+    left: auto;
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+    transform: translateX(100%);
+}
+
+.sidebar.active, .notes-sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-header, .notes-header {
+    padding: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h3, .notes-header h3 {
+    font-family: var(--font-header);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.close-btn:hover {
+    color: var(--accent-secondary);
+}
+
+.sidebar-content, .notes-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.2rem;
+}
+
+/* Index Items */
+.index-list {
+    list-style: none;
+}
+
+.index-list li {
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    transition: all 0.15s ease;
+}
+
+.index-list li:hover {
+    background-color: var(--bg-color);
+    color: var(--accent-primary);
+}
+
+.index-list li.active {
+    background-color: var(--accent-primary);
+    color: white;
+    font-weight: 600;
+}
+
+.index-section-title {
+    font-family: var(--font-header);
+    font-weight: 700;
+    color: var(--accent-secondary);
+    padding: 0.8rem 0.8rem 0.3rem 0.8rem;
+    pointer-events: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Notes Textarea and styling */
+.notes-help {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+#notes-textarea {
+    width: 100%;
+    height: calc(100% - 100px);
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    resize: none;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+#notes-textarea:focus {
+    border-color: var(--accent-primary);
+}
+
+/* Main Presentation Area */
+.presentation-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slides Wrapper */
+.slides-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Slide Shell */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.98) translateZ(0);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 4vw;
+}
+
+.slide.current {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateZ(0);
+}
+
+/* Slide Content Layouts (Dynamic sizing to scale with Screen Height) */
+.slide-content {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 84vh; /* Dynamic scale */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 3.5vh 3vw;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.slide-content.scrollable {
+    overflow-y: auto;
+}
+
+/* Slide Elements */
+.slide h2 {
+    font-family: var(--font-header);
+    font-size: calc(1.3rem + 1vh); /* Dynamic title */
+    font-weight: 800;
+    color: var(--accent-primary);
+    margin-bottom: 1.5vh;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 0.8vh;
+}
+
+.slide h3 {
+    font-family: var(--font-header);
+    font-size: calc(1rem + 0.6vh);
+    font-weight: 700;
+    color: var(--accent-secondary);
+    margin-bottom: 1.5vh;
+}
+
+.slide h4 {
+    font-family: var(--font-header);
+    font-size: calc(0.95rem + 0.4vh);
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 1vh;
+}
+
+/* Typography styles inside slides */
+.justified {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Spaced and formatted lists */
+.spaced-list {
+    list-style: none;
+}
+
+.spaced-list > li {
+    margin-bottom: 1.8vh;
+    position: relative;
+    padding-left: 1.8rem;
+    font-size: calc(0.85rem + 0.4vh); /* Fluid size */
+}
+
+.spaced-list > li > strong.bullet {
+    position: absolute;
+    left: 0;
+    color: var(--accent-secondary);
+}
+
+.sub-list {
+    list-style-type: circle;
+    padding-left: 2rem; /* Sangría para subpuntos */
+    margin-top: 0.8vh;
+}
+
+.sub-list li {
+    margin-bottom: 0.5vh;
+    font-size: calc(0.8rem + 0.3vh);
+    color: var(--text-secondary);
+}
+
+.subpoint-list {
+    list-style: none;
+}
+
+.subpoint-list > li {
+    margin-bottom: 1.5vh;
+}
+
+.subpoint-list p {
+    padding-left: 1.5rem; /* Sangría a subpuntos */
+    margin-top: 0.4vh;
+    font-size: calc(0.75rem + 0.3vh);
+    color: var(--text-secondary);
+}
+
+/* Two-Panel Layout */
+.two-panel {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2.5vw;
+    flex: 1;
+    overflow: hidden;
+}
+
+.text-panel {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    height: 100%;
+}
+
+.image-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.image-panel img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+.image-panel.sticky-panel {
+    align-self: flex-start;
+}
+
+/* Single Text Panel */
+.single-text-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.large-font li {
+    font-size: calc(1rem + 0.5vh);
+    margin-bottom: 2.2vh;
+}
+
+/* Cover Slide layout */
+.cover-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    align-items: center;
+    height: 100%;
+}
+
+.cover-text h1 {
+    font-family: var(--font-header);
+    font-size: calc(1.8rem + 1.8vh);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--accent-primary);
+    margin-bottom: 1.5vh;
+}
+
+.cover-text h2 {
+    font-family: var(--font-body);
+    font-size: calc(1rem + 0.8vh);
+    font-weight: 500;
+    color: var(--accent-secondary);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 3vh;
+}
+
+.cover-divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-secondary);
+    margin-bottom: 3vh;
+    border-radius: 2px;
+}
+
+.cover-text .school {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.5vh;
+}
+
+.cover-text .author {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.cover-image-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover-image-container img {
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Final summary for last slide */
+.final-summary {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+/* Image formatting helper */
+.border-radius-image {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.max-width-200 {
+    max-width: 200px !important;
+}
+
+/* Art Slide styles */
+.art-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.art-image-wrapper {
+    flex: 1;
+    max-width: 100%;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.art-img-interactive {
+    max-width: 100%;
+    max-height: 480px;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stage-work-img {
+    max-height: 100px;
+    align-self: center;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: 1.2vh;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+.stage-work-img:hover {
+    transform: scale(1.05);
+}
+
+.art-grid.show-info .art-image-wrapper {
+    max-width: 50%;
+}
+
+.art-grid.show-info .art-img-interactive {
+    max-height: 400px;
+}
+
+.art-info {
+    flex: 1;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.art-grid.show-info .art-info {
+    max-width: 50%;
+    opacity: 1;
+    overflow: visible;
+}
+
+.painting-title {
+    font-family: var(--font-header);
+    font-size: calc(1.1rem + 0.3vh);
+    color: var(--text-primary);
+}
+
+.painting-author {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+.art-divider {
+    width: 40px;
+    height: 2px;
+    background-color: var(--border-color);
+    margin: 1.5vh 0;
+}
+
+.art-description {
+    font-size: calc(0.85rem + 0.25vh);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Timeline visual container */
+.timeline-visual-container {
+    text-align: center;
+    margin-bottom: 1.5vh;
+    background-color: #FAF7F2;
+    padding: 1vh;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.timeline-img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+/* Interactive Timeline Widget */
+.interactive-timeline-widget {
+    margin-top: 1.5vh;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1.5vh;
+}
+
+.widget-title {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 1vh;
+}
+
+.timeline-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5vh;
+}
+
+.timeline-tab {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.4rem 1rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeline-tab:hover {
+    background-color: var(--border-color);
+}
+
+.timeline-tab.active {
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.timeline-panel {
+    display: none;
+}
+
+.timeline-panel.active {
+    display: block;
+}
+
+.timeline-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5vh;
+}
+
+.timeline-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1vh 1.2vw;
+    transition: transform 0.2s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-secondary);
+}
+
+.card-year {
+    display: inline-block;
+    background-color: var(--accent-secondary);
+    color: white;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-bottom: 0.4vh;
+}
+
+.timeline-card strong {
+    display: block;
+    font-family: var(--font-header);
+    font-size: 0.95rem;
+    margin-bottom: 0.2vh;
+}
+
+.timeline-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Features Grid for Slide 8 */
+.features-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    margin: 1.5vh 0;
+}
+
+.feature-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2vh 1.5vw;
+}
+
+.feature-card h4 {
+    color: var(--accent-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5vh;
+    margin-bottom: 1.2vh;
+}
+
+.intro-lead {
+    font-size: calc(0.95rem + 0.4vh);
+    font-weight: 500;
+    margin-bottom: 1.5vh;
+}
+
+.naturalism-extension {
+    background-color: rgba(176, 107, 80, 0.05);
+    border-left: 3px solid var(--accent-secondary);
+    padding: 1.5vh 2vw;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    font-size: calc(0.8rem + 0.3vh);
+}
+
+.naturalism-defenders {
+    margin-top: 1.5vh;
+    background-color: #FAF7F2;
+    padding: 1vh 1.5vw;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    font-size: calc(0.8rem + 0.3vh);
+}
+
+/* Tables Styling */
+.responsive-table-container {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow-y: hidden;
+}
+
+.comparison-table, .naturalism-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th, .naturalism-table th {
+    background-color: var(--accent-primary);
+    color: white;
+    font-family: var(--font-header);
+    font-weight: 700;
+    padding: 1vh 1vw;
+    text-align: left;
+    font-size: calc(0.85rem + 0.3vh);
+}
+
+.naturalism-table th {
+    background-color: #4A5643;
+}
+
+.comparison-table td, .naturalism-table td {
+    padding: 0.8vh 1vw;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+    line-height: 1.45;
+}
+
+.comparison-table tr:nth-child(even), .naturalism-table tr:nth-child(even) {
+    background-color: var(--bg-color);
+}
+
+.comparison-table tr:hover, .naturalism-table tr:hover {
+    background-color: rgba(95, 107, 82, 0.03);
+}
+
+/* Tab button controls */
+.tabs-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5vh;
+}
+
+.tab-btn {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background-color: var(--border-color);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-secondary);
+    color: white;
+    border-color: var(--accent-secondary);
+}
+
+.tab-content {
+    display: none;
+    height: calc(100% - 40px);
+}
+
+.tab-content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Game Widget Styles */
+.game-widget {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5vh 2vw;
+    text-align: center;
+    max-width: 600px;
+    margin: 2vh auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.game-instruction {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5vh;
+}
+
+.game-card {
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2vh;
+    font-size: calc(0.95rem + 0.3vh);
+    font-style: italic;
+    margin-bottom: 2vh;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.game-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.game-opt-btn {
+    background-color: white;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    padding: 0.6rem 1.5rem;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.game-opt-btn:hover {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.game-feedback {
+    margin-top: 1.5vh;
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 1rem;
+    min-height: 24px;
+}
+
+.game-feedback.correct {
+    color: #437C32;
+}
+
+.game-feedback.incorrect {
+    color: #C06C54;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* Galdós Stages Columns */
+.galdos-stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+    margin-top: 0.5vh;
+    height: 100%;
+}
+
+.stage-column {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2vh 1vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.stage-column h4 {
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.8vh;
+    margin-bottom: 1.5vh;
+    color: var(--accent-primary);
+    font-size: calc(0.9rem + 0.3vh);
+}
+
+.stage-realismo { border-top: 4px solid var(--accent-primary); }
+.stage-naturalismo { border-top: 4px solid var(--accent-secondary); }
+.stage-espiritualismo { border-top: 4px solid #C59F60; }
+
+/* Interactive Map Widget for Galdos */
+.map-widget {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2vh 2vw;
+    height: 100%;
+}
+
+.map-places {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+    margin-top: 1.5vh;
+}
+
+.map-place-card {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.5vh 1vw;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.map-place-card:hover {
+    border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.map-place-card h5 {
+    font-family: var(--font-header);
+    font-size: calc(0.85rem + 0.25vh);
+    color: var(--accent-secondary);
+    margin-bottom: 0.5vh;
+}
+
+.map-place-card p {
+    font-size: calc(0.75rem + 0.15vh);
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Activities Slide Elements */
+.activity-box {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5vh 2vw;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5vh;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8vh;
+}
+
+.activity-header i {
+    font-size: 1.4rem;
+    color: var(--accent-secondary);
+}
+
+.activity-header h3 {
+    margin-bottom: 0;
+}
+
+.focus-question {
+    background-color: white;
+    border-radius: 6px;
+    padding: 1vh 1.5vw;
+    margin: 1.5vh 0;
+    border-left: 3px solid var(--accent-primary);
+}
+
+/* Student response box */
+.student-response-container {
+    margin-top: 1.5vh;
+}
+
+.student-answer-box {
+    width: 100%;
+    height: 80px;
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    resize: none;
+    outline: none;
+    margin-bottom: 0.5rem;
+    background-color: white;
+}
+
+.student-answer-box:focus {
+    border-color: var(--accent-secondary);
+}
+
+.action-btn, .show-suggested-btn {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.action-btn:hover, .show-suggested-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.show-suggested-btn {
+    background-color: transparent;
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+}
+
+.show-suggested-btn:hover {
+    background-color: var(--accent-secondary);
+    color: white;
+}
+
+.suggested-answer {
+    margin-top: 1vh;
+    background-color: white;
+    padding: 1.5vh 1.5vw;
+    border-radius: 6px;
+    font-size: calc(0.8rem + 0.2vh);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid #437C32;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Video Slide components */
+.video-slide h3 {
+    margin-bottom: 0.5rem;
+}
+
+.video-container-wrapper {
+    flex: 1;
+    background-color: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    height: 100%;
+}
+
+.html5-video {
+    width: 100%;
+    height: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    outline: none;
+}
+
+/* Style Box HTML for La Regenta */
+.style-box-html {
+    background-color: rgba(95, 107, 82, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5vh 1.5vw;
+    margin-bottom: 1.5vh;
+}
+
+.style-box-html h5 {
+    font-family: var(--font-header);
+    font-size: calc(0.95rem + 0.25vh);
+    font-weight: 700;
+    color: var(--accent-primary);
+    text-align: center;
+    margin-bottom: 1vh;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5vh;
+}
+
+.style-box-html p {
+    font-size: calc(0.75rem + 0.2vh);
+    margin-bottom: 0.8vh;
+    line-height: 1.45;
+}
+
+.style-box-html p:last-child {
+    margin-bottom: 0;
+}
+
+.original-box-link {
+    text-align: center;
+}
+
+.original-box-link img {
+    max-height: 120px;
+    cursor: pointer;
+}
+
+/* Text Alignment Specific Helper */
+.text-left-align {
+    text-align: left !important;
+}
+
+/* Questions list grid inside Slide 19 */
+.questions-list {
+    margin-top: 0.5vh;
+}
+
+.question-item {
+    margin-bottom: 1.5vh;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 1.5vh;
+}
+
+.question-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.question-item p {
+    font-size: calc(0.85rem + 0.2vh);
+    margin-bottom: 0.8vh;
+}
+
+/* Navigation Arrow Overlays */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    z-index: 50;
+    transition: all 0.2s ease;
+}
+
+.nav-arrow:hover {
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.prev-arrow {
+    left: 1.5rem;
+}
+
+.next-arrow {
+    right: 1.5rem;
+}
+
+/* Footer Control Styles */
+.app-footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem 1.5rem;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: var(--bg-color);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 4.35%; /* 1 / 23 */
+    height: 100%;
+    background-color: var(--accent-secondary);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.slide-counter {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.shortcuts-info kbd {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    color: var(--text-primary);
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+/* Fullscreen Lightbox Modal */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26, 22, 19, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    z-index: 1010;
+}
+
+.lightbox-close-btn:hover {
+    opacity: 1;
+}
+
+.lightbox-content-wrapper {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content-wrapper img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.lightbox-content-wrapper video {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    outline: none;
+}
+
+/* Zoomable pointer indicator */
+.zoomable {
+    cursor: zoom-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================================================
+   SPECIFIC STYLES TO PREVENT SCROLL (FLUID & COMPACT)
+   ==================================================== */
+
+/* Slide 2: Symmetrical and larger central text */
+#slide-2 .two-panel {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    height: 100%;
+}
+
+#slide-2 .main-list {
+    font-size: calc(1rem + 0.6vh);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+#slide-2 .main-list > li {
+    margin-bottom: 2vh;
+}
+
+#slide-2 .sub-list {
+    margin-top: 0.8vh;
+    font-size: calc(0.85rem + 0.4vh);
+    padding-left: 2rem;
+}
+
+#slide-2 .sub-list li {
+    margin-bottom: 0.6vh;
+}
+
+/* Force No Scroll on content slides */
+#slide-5 .slide-content,
+#slide-8 .slide-content,
+#slide-9 .slide-content,
+#slide-10 .slide-content,
+#slide-12 .slide-content,
+#slide-14 .slide-content,
+#slide-17 .slide-content {
+    overflow-y: hidden !important;
+}
+
+/* Slide 5: Compact comparison table using fluid layout */
+#slide-5 .responsive-table-container {
+    height: calc(100% - 70px);
+    max-height: none;
+}
+
+#slide-5 .comparison-table {
+    height: 100%;
+    font-size: calc(0.68rem + 0.3vh);
+}
+
+#slide-5 .comparison-table td, #slide-5 .comparison-table th {
+    padding: 0.6vh 0.8vw;
+    line-height: 1.35;
+}
+
+/* Slide 8: Compact General Characteristics using fluid layout */
+#slide-8 .intro-lead {
+    font-size: calc(0.9rem + 0.35vh);
+    margin-bottom: 1vh;
+}
+
+#slide-8 .features-columns {
+    gap: 1.5vw;
+    margin: 1vh 0;
+}
+
+#slide-8 .feature-card {
+    padding: 1.5vh 1.5vw;
+}
+
+#slide-8 .feature-card h4 {
+    margin-bottom: 0.6vh;
+    font-size: calc(0.95rem + 0.25vh);
+}
+
+#slide-8 .spaced-list > li {
+    margin-bottom: 0.6vh;
+    font-size: calc(0.78rem + 0.3vh);
+    padding-left: 1.5rem;
+}
+
+#slide-8 .naturalism-extension {
+    padding: 1.2vh 1.5vw;
+    font-size: calc(0.78rem + 0.3vh);
+    margin-top: 1vh;
+}
+
+/* Slide 9: Compact Realism Content using fluid layout */
+#slide-9 .slide-content p {
+    font-size: calc(0.85rem + 0.2vh);
+    margin-bottom: 0.5vh;
+}
+
+#slide-9 .spaced-list > li {
+    margin-bottom: 0.8vh;
+    font-size: calc(0.75rem + 0.3vh);
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+#slide-9 .image-panel img {
+    max-height: 100%;
+}
+
+/* Slide 10: Compact Naturalism Content using fluid layout */
+#slide-10 .slide-content p {
+    font-size: calc(0.85rem + 0.2vh);
+    margin-bottom: 0.5vh;
+}
+
+#slide-10 .spaced-list > li {
+    margin-bottom: 0.8vh;
+    font-size: calc(0.75rem + 0.3vh);
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+#slide-10 .naturalism-defenders {
+    margin-top: 1vh;
+    padding: 0.6vh 1.2vw;
+    font-size: calc(0.75rem + 0.3vh);
+}
+
+#slide-10 .image-panel img {
+    max-height: 100%;
+}
+
+/* Slide 12: Compact Novel Characteristics using fluid layout */
+#slide-12 .slide-content p {
+    font-size: calc(0.85rem + 0.2vh);
+    margin-bottom: 0.5vh;
+}
+
+#slide-12 .spaced-list > li {
+    margin-bottom: 0.8vh;
+    font-size: calc(0.74rem + 0.28vh);
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+#slide-12 .image-panel img {
+    max-height: 100%;
+}
+
+/* Slide 14: Compact Galdós stages using fluid layout */
+#slide-14 .galdos-stages {
+    gap: 1.2vw;
+    margin-top: 0.5vh;
+}
+
+#slide-14 .stage-column {
+    padding: 1.2vh 1vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#slide-14 .stage-column h4 {
+    margin-bottom: 0.8vh;
+    font-size: calc(0.85rem + 0.3vh);
+    padding-bottom: 0.4vh;
+}
+
+#slide-14 .subpoint-list > li {
+    margin-bottom: 0.8vh;
+}
+
+#slide-14 .subpoint-list p {
+    margin-top: 0.3vh;
+    font-size: calc(0.7rem + 0.25vh);
+    line-height: 1.35;
+    padding-left: 1.2rem;
+}
+
+/* Slide 16: Compact Naturalism characteristics table using fluid layout */
+#slide-16 .slide-content {
+    padding: 2.2vh 2.5vw 2.2vh 2.5vw !important;
+    overflow-y: hidden !important;
+}
+
+#slide-16 h2 {
+    margin-bottom: 0.2vh !important;
+}
+
+#slide-16 h3 {
+    margin-bottom: 0.4vh !important;
+    font-size: 1.05rem !important;
+}
+
+#slide-16 .tabs-container {
+    margin-bottom: 0.6vh !important;
+}
+
+#slide-16 .tab-btn {
+    padding: 0.3vh 0.8vw !important;
+    font-size: 0.8rem !important;
+}
+
+#slide-16 .tab-content {
+    flex: 1 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    display: none;
+}
+
+#slide-16 .tab-content.active {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#slide-16 .responsive-table-container {
+    flex: 1 !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+#slide-16 .naturalism-table {
+    width: 100%;
+    height: auto !important;
+    border-collapse: collapse;
+}
+
+#slide-16 .naturalism-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 0.6vh 0.9vw !important;
+    font-size: calc(0.72rem + 0.25vh) !important;
+    letter-spacing: 0.03em;
+    background-color: #3f4e3c !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#slide-16 .naturalism-table td {
+    padding: 0.6vh 0.9vw !important;
+    font-size: calc(0.68rem + 0.22vh) !important;
+    line-height: 1.34 !important;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#slide-16 .naturalism-table td p {
+    margin-bottom: 0.25vh !important;
+}
+
+#slide-16 .naturalism-table td p:first-child {
+    color: var(--accent-primary);
+    font-size: calc(0.72rem + 0.25vh) !important;
+    margin-bottom: 0.2vh !important;
+}
+
+#slide-16 .responsive-table-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+#slide-16 .responsive-table-container::-webkit-scrollbar-track {
+    background: #f1ede6;
+    border-radius: 4px;
+}
+
+#slide-16 .responsive-table-container::-webkit-scrollbar-thumb {
+    background: #b85c4c;
+    border-radius: 4px;
+}
+
+#slide-16 .responsive-table-container::-webkit-scrollbar-thumb:hover {
+    background: #9c4c3e;
+}
+
+/* Slide 17: Compact Emilia Pardo Bazán biography using fluid layout */
+#slide-17 .spaced-list > li {
+    margin-bottom: 1.5vh;
+    font-size: calc(0.82rem + 0.45vh);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .slide {
+        padding: 1.5rem 2.5rem;
+    }
+    
+    .cover-slide {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .cover-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .cover-divider {
+        margin: 1rem auto;
+    }
+
+    .two-panel {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .image-panel {
+        max-height: 250px;
+    }
+
+    .features-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .galdos-stages {
+        grid-template-columns: 1fr;
+    }
+
+    .map-places {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+    
+    .prev-arrow { left: 0.5rem; }
+    .next-arrow { right: 0.5rem; }
+    
+    .art-grid.show-info {
+        flex-direction: column;
+    }
+    .art-grid.show-info .art-image-wrapper,
+    .art-grid.show-info .art-info {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .app-header .header-btn span {
+        display: none;
+    }
+    .slide-content {
+        padding: 1.2rem;
+    }
+    .slide h2 {
+        font-size: 1.5rem;
+    }
+    .slide h3 {
+        font-size: 1.1rem;
+    }
+}

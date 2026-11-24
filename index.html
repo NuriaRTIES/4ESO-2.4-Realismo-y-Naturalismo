@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Literatura del Siglo XIX: Realismo y Naturalismo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header class="app-header">
+        <button id="menu-btn" class="header-btn" title="Ver Índice"><i class="fa-solid fa-list-ul"></i> <span>Índice</span></button>
+        <div class="presentation-title">Realismo y Naturalismo s. XIX</div>
+        <div class="header-actions">
+            <button id="notes-btn" class="header-btn" title="Tus Notas"><i class="fa-solid fa-pen-to-square"></i> <span>Notas</span></button>
+            <button id="fullscreen-btn" class="header-btn" title="Pantalla Completa"><i class="fa-solid fa-expand"></i> <span>Pantalla Completa</span></button>
+        </div>
+    </header>
+
+    <!-- Sidebar Menu Drawer -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Índice de Diapositivas</h3>
+            <button id="close-sidebar-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-content">
+            <ul class="index-list">
+                <li data-slide="1" class="active">1. Portada</li>
+                <li data-slide="2">2. Contenidos</li>
+                <li class="index-section-title">I. Contexto Histórico</li>
+                <li data-slide="3">3. Línea del Tiempo</li>
+                <li data-slide="4">4. Un siglo convulso</li>
+                <li class="index-section-title">II. Realismo y Naturalismo</li>
+                <li data-slide="5">5. Evolución de Temas y Formas</li>
+                <li data-slide="6">6. Del Romanticismo...</li>
+                <li data-slide="7">7. ...al Realismo y Naturalismo</li>
+                <li data-slide="8">8. Características Generales</li>
+                <li data-slide="9">9. El Realismo</li>
+                <li data-slide="10">10. El Naturalismo</li>
+                <li data-slide="11">11. Actividad dossier (Aules)</li>
+                <li class="index-section-title">III. La Novela Realista. Galdós</li>
+                <li data-slide="12">12. La novela realista</li>
+                <li data-slide="13">13. Benito Pérez Galdós</li>
+                <li data-slide="14">14. Galdós: Tres épocas</li>
+                <li data-slide="15">15. Actividades: Galdós</li>
+                <li class="index-section-title">IV. Otros Autores</li>
+                <li data-slide="16">16. Novela naturalista</li>
+                <li data-slide="17">17. Emilia Pardo Bazán</li>
+                <li data-slide="18">18. Vídeo: Los pazos de Ulloa</li>
+                <li data-slide="19">19. Actividades: Pardo Bazán</li>
+                <li data-slide="20">20. Leopoldo Alas, Clarín</li>
+                <li data-slide="21">21. La Regenta</li>
+                <li data-slide="22">22. Vídeo: La Regenta</li>
+                <li data-slide="23">23. Actividades: Clarín</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Notes Drawer -->
+    <div id="notes-sidebar" class="notes-sidebar">
+        <div class="notes-header">
+            <h3>Mis Notas de Clase</h3>
+            <button id="close-notes-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="notes-content">
+            <p class="notes-help">Usa este espacio para tomar apuntes sobre la clase. Tus notas se guardan automáticamente en tu navegador.</p>
+            <textarea id="notes-textarea" placeholder="Escribe aquí tus notas..."></textarea>
+            <button id="download-notes-btn" class="action-btn"><i class="fa-solid fa-download"></i> Descargar Notas (.txt)</button>
+        </div>
+    </div>
+
+    <!-- Main Presentation Container -->
+    <main class="presentation-container">
+        
+        <!-- Navigation Buttons -->
+        <button id="prev-slide-btn" class="nav-arrow prev-arrow" title="Diapositiva Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="next-slide-btn" class="nav-arrow next-arrow" title="Diapositiva Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <!-- Slide Wrapper -->
+        <div id="slides-wrapper" class="slides-wrapper">
+            
+            <!-- Slide 1: Portada -->
+            <section class="slide current" id="slide-1">
+                <div class="slide-content cover-slide">
+                    <div class="cover-text">
+                        <h1>LA LITERATURA DEL SIGLO XIX</h1>
+                        <h2>REALISMO Y NATURALISMO</h2>
+                        <div class="cover-divider"></div>
+                        <p class="school">IES TORRE DEL REI</p>
+                        <p class="author">Prof. Nuria Ribés</p>
+                    </div>
+                    <div class="cover-image-container">
+                        <img src="media/image26.png" alt="La literatura del siglo XIX: Realismo y Naturalismo" class="zoomable">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Contenidos -->
+            <section class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h2>CONTENIDOS</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <ul class="main-list">
+                                <li class="index-item" data-target="3">
+                                    <span class="bullet">✸</span> 
+                                    <strong>Contexto histórico.</strong> 2ª mitad siglo XIX
+                                </li>
+                                <li class="index-item" data-target="5">
+                                    <span class="bullet">✸</span> 
+                                    <strong>Realismo y Naturalismo:</strong>
+                                    <ul class="sub-list">
+                                        <li class="index-item" data-target="8">Características generales</li>
+                                        <li class="index-item" data-target="12">La novela realista. Galdós</li>
+                                        <li class="index-item" data-target="17">Otros autores: Clarín, Pardo Bazán</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/espana_fin_siglo.jpg" alt="España a finales del siglo XIX" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Contexto Histórico - Línea de tiempo -->
+            <section class="slide" id="slide-3">
+                <div class="slide-content scrollable">
+                    <h2>CONTEXTO HISTÓRICO</h2>
+                    <div class="timeline-visual-container">
+                        <img src="media/image27.png" alt="Línea de tiempo del siglo XIX en España" class="zoomable timeline-img">
+                    </div>
+                    
+                    <!-- Interactive HTML Timeline widget for active learning -->
+                    <div class="interactive-timeline-widget">
+                        <p class="widget-title"><i class="fa-solid fa-circle-info"></i> Haz clic en cada etapa para ver los hitos históricos clave:</p>
+                        <div class="timeline-tabs">
+                            <button class="timeline-tab active" data-period="reinados">1800 - 1868 (Reinados)</button>
+                            <button class="timeline-tab" data-period="sexenio">1868 - 1874 (Sexenio)</button>
+                            <button class="timeline-tab" data-period="restauracion">1874 - 1900 (Restauración)</button>
+                        </div>
+                        <div class="timeline-panels">
+                            <div class="timeline-panel active" id="period-reinados">
+                                <div class="timeline-cards">
+                                    <div class="timeline-card">
+                                        <span class="card-year">1808 - 1813</span>
+                                        <strong>Guerra de Independencia</strong>
+                                        <p>Invasión napoleónica e inicio del conflicto. Constitución de Cádiz en 1812.</p>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <span class="card-year">1813 - 1833</span>
+                                        <strong>Fernando VII</strong>
+                                        <p>Restauración absolutista e independencia de las colonias americanas (1808-1825).</p>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <span class="card-year">1833 - 1868</span>
+                                        <strong>Isabel II</strong>
+                                        <p>Construcción del Estado liberal. Periodo marcado por las Guerras Carlistas y constituciones de 1837 y 1845.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-panel" id="period-sexenio">
+                                <div class="timeline-cards">
+                                    <div class="timeline-card">
+                                        <span class="card-year">1868</span>
+                                        <strong>La Gloriosa</strong>
+                                        <p>Revolución democrática que expulsa a Isabel II de España e instaura un gobierno provisional.</p>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <span class="card-year">1871 - 1873</span>
+                                        <strong>Amadeo I</strong>
+                                        <p>Reinado democrático breve de Amadeo de Saboya, condicionado por una gran inestabilidad.</p>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <span class="card-year">1873 - 1874</span>
+                                        <strong>I República</strong>
+                                        <p>Primera experiencia republicana en España, sacudida por la III Guerra Carlista.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-panel" id="period-restauracion">
+                                <div class="timeline-cards">
+                                    <div class="timeline-card">
+                                        <span class="card-year">1874 - 1885</span>
+                                        <strong>Alfonso XII</strong>
+                                        <p>Restauración de la monarquía borbónica. Se promulga la Constitución estable de 1876.</p>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <span class="card-year">1885 - 1931</span>
+                                        <strong>Alfonso XIII / Regencia</strong>
+                                        <p>Periodo de crisis colonial (Pérdida de Cuba y Filipinas en 1898) y fuerte desarrollo del movimiento obrero.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Contexto Histórico - Un final de siglo convulso -->
+            <section class="slide" id="slide-4">
+                <div class="slide-content">
+                    <h2>CONTEXTO HISTÓRICO</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <h3>Un final de siglo convulso...</h3>
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> <strong>1868</strong>. Revolución del 68 (la <strong>Gloriosa</strong>)
+                                    <ul class="sub-list">
+                                        <li>- 1869: Constitución democrática</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>1871-1873.</strong> Reinado de Amadeo I de Saboya
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>1873-1874</strong>. I República española
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>1874-1931</strong>. Restauración borbónica
+                                    <ul class="sub-list">
+                                        <li>- Alfonso XII (1875-1885)</li>
+                                        <li>- Alfonso XIII (1885-1931)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>✸</strong> Nacimiento y desarrollo del <strong>movimiento obrero</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/movimientos_obreros.jpg" alt="Nacimiento del movimiento obrero en España" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Realismo y Naturalismo - Evolución de temas y formas -->
+            <section class="slide" id="slide-5">
+                <div class="slide-content scrollable">
+                    <h2>REALISMO Y NATURALISMO</h2>
+                    <h3>Evolución de temas y formas</h3>
+                    <div class="tabs-container">
+                        <button class="tab-btn active" id="btn-show-table">Tabla Interactiva</button>
+                        <button class="tab-btn" id="btn-show-game">Repaso: ¿Romanticismo o Realismo?</button>
+                        <button class="tab-btn" id="btn-show-img">Ver Imagen Original</button>
+                    </div>
+
+                    <div class="tab-content active" id="panel-table">
+                        <div class="responsive-table-container">
+                            <table class="comparison-table justified">
+                                <thead>
+                                    <tr>
+                                        <th>Criterio</th>
+                                        <th>Romanticismo</th>
+                                        <th>Realismo - Naturalismo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Actitud del artista</strong></td>
+                                        <td>El romántico <strong>rechaza</strong> la sociedad burguesa y <strong>huye</strong> hacia épocas pasadas o culturas lejanas y exóticas.</td>
+                                        <td>El escritor realista se <strong>identifica</strong> con los valores de la sociedad burguesa, aunque a veces la <strong>critique para reformarla</strong>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Método artístico</strong></td>
+                                        <td>El arte es producto de la <strong>inspiración</strong> y de la <strong>subjetividad</strong>.</td>
+                                        <td>El arte es un producto de la <strong>observación directa y minuciosa</strong> de la realidad (un documento fotográfico). Y para alcanzar la mayor objetividad, se emplea el <strong>método científico</strong>, que consiste en observar, documentarse y experimentar.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Temas</strong></td>
+                                        <td>Los temas románticos surgen de los <strong>delirios de la fantasía</strong> y de los <strong>sentimientos</strong>, o bien se inspiran en las <strong>leyendas</strong> heroicas del pasado medieval.</td>
+                                        <td>La materia literaria del escritor realista es la <strong>realidad social contemporánea</strong>, es decir, el mundo cotidiano en el que vive.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Personajes</strong></td>
+                                        <td>Personajes <strong>heroicos</strong>, idealizados, rebeldes, que se enfrentan a la sociedad y a las fuerzas del <strong>destino</strong>.</td>
+                                        <td>Personajes <strong>anónimos</strong>, vulgares, <strong>influidos por la sociedad</strong> y que por primera vez en la literatura no son objeto de burla, sino que pueden llegar a adquirir una dimensión trágica.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Género literario</strong></td>
+                                        <td>El Romanticismo brilló especialmente en <strong>lírica</strong> y <strong>teatro</strong>.</td>
+                                        <td>El género realista por excelencia es la <strong>novela</strong>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lenguaje</strong></td>
+                                        <td>Vocabulario y expresiones tremendistas, <strong>hiperbólicas</strong>. A veces se «envejece» el lenguaje mediante <strong>arcaísmos</strong>.</td>
+                                        <td><strong>Lenguaje coloquial y dialectal en los diálogos</strong>, que se combina en el Naturalismo con el <strong>léxico científico</strong> del narrador.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="panel-game">
+                        <div class="game-widget">
+                            <p class="game-instruction">Clasifica el siguiente enunciado. Haz clic en el movimiento correcto:</p>
+                            <div class="game-card" id="game-card-content">
+                                "El arte se basa en la inspiración individual, la subjetividad y el delirio de la fantasía."
+                            </div>
+                            <div class="game-options">
+                                <button class="game-opt-btn" data-correct="romanticismo">Romanticismo</button>
+                                <button class="game-opt-btn" data-correct="realismo">Realismo-Naturalismo</button>
+                            </div>
+                            <div id="game-feedback" class="game-feedback"></div>
+                            <button id="next-game-btn" class="action-btn hide">Siguiente enunciado</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="panel-img">
+                        <div class="comparison-image-container">
+                            <img src="media/image28.png" alt="Tabla evolutiva original" class="zoomable centered-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Del Romanticismo... -->
+            <section class="slide" id="slide-6">
+                <div class="slide-content art-slide">
+                    <h2>Del ROMANTICISMO...</h2>
+                    <div class="art-grid">
+                        <div class="art-image-wrapper">
+                            <img src="media/image29.png" alt="Caminante sobre un mar de nubes" class="art-img-interactive">
+                        </div>
+                        <div class="art-info justified">
+                            <p class="painting-title"><strong>Caminante sobre un mar de nubes</strong></p>
+                            <p class="painting-author">Caspar David Friedrich (1818)</p>
+                            <div class="art-divider"></div>
+                            <p class="art-description">La obra cumbre del Romanticismo pictórico representa la exaltación de la subjetividad, la naturaleza sublime, la soledad heroica y la proyección de los sentimientos internos sobre el paisaje, elementos clave que el Realismo posterior rechazará en búsqueda de la verdad objetiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: ...al Realismo y Naturalismo -->
+            <section class="slide" id="slide-7">
+                <div class="slide-content art-slide">
+                    <h2>...al REALISMO Y NATURALISMO</h2>
+                    <div class="art-grid">
+                        <div class="art-image-wrapper">
+                            <img src="media/image30.png" alt="Los picapedreros" class="art-img-interactive">
+                        </div>
+                        <div class="art-info justified">
+                            <p class="painting-title"><strong>Los picapedreros</strong></p>
+                            <p class="painting-author">Gustave Courbet (1849)</p>
+                            <div class="art-divider"></div>
+                            <p class="art-description">El realismo pictórico irrumpe retratando la crudeza del trabajo manual y la reality social de las clases bajas sin idealizaciones. Se busca plasmar de forma sincera, directa e incluso descarnada a los personajes anónimos del mundo contemporáneo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Características generales -->
+            <section class="slide" id="slide-8">
+                <div class="slide-content">
+                    <h2>EL REALISMO Y NATURALISMO</h2>
+                    <h3>Características generales</h3>
+                    <div class="single-text-panel justified">
+                        <p class="intro-lead">
+                            El <strong>Realismo</strong> es un movimiento artístico y literario que tiene como propósito <strong>representar de forma minuciosa y objetiva</strong> una <strong>realidad contemporánea</strong> muy concreta: la vida cotidiana y los problemas de la sociedad burguesa de la segunda mitad del siglo XIX.
+                        </p>
+                        
+                        <div class="features-columns">
+                            <div class="feature-card">
+                                <h4><i class="fa-solid fa-magnifying-glass"></i> El arte como espejo y denuncia de la realidad</h4>
+                                <ul class="spaced-list">
+                                    <li>El arte muestra la realidad y es el lector el que juzga lo que lee y actúa en consecuencia.</li>
+                                    <li>Observación racional del entorno, opuesto al idealismo romántico.</li>
+                                </ul>
+                            </div>
+                            <div class="feature-card">
+                                <h4><i class="fa-solid fa-eye"></i> Mímesis y verosimilitud</h4>
+                                <ul class="spaced-list">
+                                    <li>Observación directa y descripción de la realidad.</li>
+                                    <li>Los héroes románticos dejan paso a personajes corrientes de la clase media.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="naturalism-extension">
+                            En cambio, otros -los <strong>naturalistas</strong>- llegaron más lejos. No solo <strong>observaron objetivamente</strong> el comportamiento del hombre y de la sociedad, sino que intentaron <strong>explicarlo</strong> con las nuevas teorías científicas del siglo XIX: <strong>las leyes de la herencia biológica y la selección natural de las especies</strong>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: El Realismo (Contenido) -->
+            <section class="slide" id="slide-9">
+                <div class="slide-content">
+                    <h2>EL REALISMO Y NATURALISMO</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <h3>EL REALISMO</h3>
+                            <p>Es un <strong>movimiento artístico y literario</strong> que se desarrolló en la <strong>segunda mitad del siglo XIX</strong> y que tiene como objetivo <strong>representar, de forma minuciosa y objetiva</strong>, la vida cotidiana y los problemas de la <strong>sociedad burguesa</strong> de su época. Estas son sus características principales:</p>
+                            
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> <strong>OBSERVACIÓN DE LA REALIDAD.</strong> Emplearon el <strong>método científico</strong>, que consiste en <strong>documentarse y observar</strong> la realidad de forma directa. Rechazaron el subjetivismo y pretendieron crear <strong>documentos fotográficos de la realidad</strong>.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>CENTRADOS EN SU ÉPOCA.</strong> Como si fueran periodistas, se centran en la realidad social <strong>contemporánea</strong>, es decir, en el mundo cotidiano en el que viven.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>ANTIHÉROES.</strong> Personajes anónimos de clase media y obrera que a veces adquieren una <strong>dimensión trágica</strong> que los dignifica.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>LENGUAJE.</strong> Reproducen fielmente el <strong>lenguaje coloquial</strong> y <strong>dialectal</strong> de los personajes.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>MENTALIDAD.</strong> El escritor se identifica con la <strong>sociedad burguesa</strong> aunque la <strong>critique</strong> para reformarla.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>GÉNERO LITERARIO.</strong> Cultivan fundamentalmente la <strong>novela</strong>, desechando la poesía romántica.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel sticky-panel">
+                            <img src="media/image31.png" alt="Detalle del Realismo" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: El Naturalismo (Contenido) -->
+            <section class="slide" id="slide-10">
+                <div class="slide-content">
+                    <h2>EL REALISMO Y NATURALISMO</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <h3>EL NATURALISMO</h3>
+                            <p>Es un movimiento literario que deriva del <strong>Realismo</strong> y lleva al <strong>extremo</strong> las ideas de este movimiento: aplicando el <strong>método científico</strong>, analizan la influencia que las <strong>leyes biológicas</strong> y el <strong>medio</strong> tienen sobre el comportamiento de sus personajes, basándose en Gregor Mendel y Charles Darwin.</p>
+                            
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> <strong>IDEOLOGÍA.</strong> Concepción <strong>pesimista</strong> de la vida a partir de <strong>teorías biológicas deterministas</strong>; el ser humano está condicionado por las <strong>leyes de la herencia</strong> y el <strong>ambiente social</strong> pobre y sórdido en el que vive.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>CRONOLOGÍA.</strong> Se desarrolló en España en la década de 1880, influido por Émile <strong>Zola</strong>. Destacan <em>La desheredada</em> (1881) y <em>Fortunata y Jacinta</em> (1887) de Galdós.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>LA POLÉMICA.</strong> Autores cristianos como Juan Valera **rechazaron** el movimiento porque reflejaba los aspectos **más sórdidos de la realidad** (alcoholismo, prostitución...) y negaba la libertad humana en favor de la **herencia biológica** y el **ambiente**.
+                                </li>
+                            </ul>
+                            <p class="naturalism-defenders"><strong>Defensores:</strong> Emilia Pardo Bazán, Galdós, Leopoldo Alas, «Clarín», y Blasco Ibáñez («el Zola español»).</p>
+                        </div>
+                        <div class="image-panel sticky-panel">
+                            <img src="media/image32.png" alt="Detalle del Naturalismo" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Actividades -->
+            <section class="slide" id="slide-11">
+                <div class="slide-content activity-slide">
+                    <h2>Actividades</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <div class="activity-box" style="display: flex; flex-direction: column; justify-content: center;">
+                                <div class="activity-header">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <h3>Actividad dossier (Aules)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/cuaderno_boli.png" alt="Dibujo de un cuaderno con un boli" class="zoomable border-radius-image" style="max-width: 440px; width: 100%; border: none; box-shadow: none;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: El Realismo - La Novela -->
+            <section class="slide" id="slide-12">
+                <div class="slide-content">
+                    <h2>EL REALISMO. La novela</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <h3>LA NOVELA REALISTA</h3>
+                            <p>Este tipo de novela se desarrolló en España entre 1868 y 1880. Observa sus principales características:</p>
+                            
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> <strong>NARRACIÓN VEROSÍMIL.</strong> Relato, ambiente, personajes y lenguaje resultan creíbles, alejados de la fantasía.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>OBSERVACIÓN OBJETIVA.</strong> Estudio directo y al natural de la realidad (pretende ser un <strong>documento fotográfico</strong>).
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>PREDOMINIO DE LA DESCRIPCIÓN.</strong> La <strong>acción narrativa</strong> resulta <strong>lenta</strong> debido a las extensas <strong>secuencias descriptivas</strong> físicas y psicológicas que detienen la trama.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>NARRADOR OMNISCIENTE.</strong> Sabe y ofrece información sobre los <strong>pensamientos</strong> y **sentimientos** más íntimos de los personajes.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>TEMAS.</strong> Temas universales (adulterio) e ideológicos (tradición frente al progreso, anticlericalismo, infraviviendas).
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>LENGUAJE.</strong> Sencillo y referencial del narrador, que contrasta con el <strong>habla regional</strong> o <strong>coloquial</strong> en los diálogos.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>MENTALIDAD.</strong> Novelas <em>de tesis</em> que defienden posturas ideológicas (España <strong>tradicional y conservadora</strong> frente a <strong>liberalismo y progreso</strong>).
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel sticky-panel">
+                            <img src="media/image33.png" alt="La novela realista y su contexto" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: El Realismo - Benito Pérez Galdós -->
+            <section class="slide" id="slide-13">
+                <div class="slide-content">
+                    <h2>EL REALISMO. La novela</h2>
+                    <h3>Benito Pérez Galdós (1843-1920)</h3>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> <strong>Mejor novelista español del s. XIX</strong> y uno de los autores más prolíficos de las letras castellanas.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> Toda su obra está inspirada por el noble ideal ilustrado de que desde la literatura se puede <strong>modernizar la sociedad</strong> y que la <strong>educación</strong> es el instrumento más importante para el progreso del país.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <em>La fontana de oro</em> (1870) → inicio del <strong>realismo</strong> en España.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>Los Episodios nacionales.</strong> Son historias noveladas sobre acontecimientos históricos de España en el siglo XIX. Comienzan con la batalla de <strong>Trafalgar</strong> (1873) para aprender del pasado y proyectar el progreso social.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/benito_perez_galdos.jpg" alt="Retrato de Benito Pérez Galdós" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Galdós - Tres Épocas -->
+            <section class="slide" id="slide-14">
+                <div class="slide-content">
+                    <h2>EL REALISMO. Benito Pérez Galdós (1843-1920)</h2>
+                    <div class="tabs-container">
+                        <button class="tab-btn active" id="btn-galdos-columns">Esquema de Etapas</button>
+                        <button class="tab-btn" id="btn-galdos-map">Ruta Literaria: El Madrid de Galdós</button>
+                        <button class="tab-btn" id="btn-galdos-img">Imagen Original</button>
+                    </div>
+
+                    <div class="tab-content active" id="panel-galdos-columns">
+                        <div class="galdos-stages justified">
+                            <!-- Column 1 -->
+                            <div class="stage-column stage-realismo">
+                                <h4>Primera época: Realismo</h4>
+                                <ul class="subpoint-list">
+                                    <li><strong>Novela histórica:</strong> <em>Episodios nacionales</em>.
+                                        <p class="justified">Aprender del <strong>pasado</strong> para construir una sociedad mejor, basada en la paz y el progreso.</p>
+                                    </li>
+                                    <li><strong>Novelas de tesis:</strong> <em>Marianela</em> y <em>Doña Perfecta</em>.
+                                        <p class="justified">Defensa del progreso y la ciencia. Analizan los defectos españoles de intolerancia e ignorancia.</p>
+                                    </li>
+                                </ul>
+                                <img src="media/marianela_cover.jpg" alt="Portada de Marianela" class="zoomable stage-work-img">
+                            </div>
+                            <!-- Column 2 -->
+                            <div class="stage-column stage-naturalismo">
+                                <h4>Segunda época: Naturalismo</h4>
+                                <ul class="subpoint-list">
+                                    <li><strong>Novelas contemporáneas:</strong> <em>Fortunata y Jacinta</em> y <em>Lo prohibido</em>.
+                                        <p class="justified">Reflejar la sociedad madrileña que vivió el autor. El tema es <strong>el afán por aparentar de las clases medias venidas a menos</strong> bajo el influjo del ambiente y la herencia.</p>
+                                    </li>
+                                </ul>
+                                <img src="media/fortunata_cover.jpg" alt="Portada de Fortunata y Jacinta" class="zoomable stage-work-img">
+                            </div>
+                            <!-- Column 3 -->
+                            <div class="stage-column stage-espiritualismo">
+                                <h4>Tercera época: Espiritualismo</h4>
+                                <ul class="subpoint-list">
+                                    <li><strong>Superación del Naturalismo:</strong> <em>Nazarín</em> y <em>Misericordia</em>.
+                                        <p class="justified">Mostrar que la vida no está determinada ciegamente por el ambiente, sino que el hombre se construye mediante la voluntad y los ideales.</p>
+                                    </li>
+                                </ul>
+                                <img src="media/misericordia_cover.jpg" alt="Portada de Misericordia" class="zoomable stage-work-img">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="panel-galdos-map">
+                        <div class="map-widget justified">
+                            <h4><i class="fa-solid fa-map-location-dot"></i> La Ruta Literaria por el Madrid Galdosiano</h4>
+                            <p>Benito Pérez Galdós describió las calles y gentes de Madrid con precisión fotográfica. Haz clic en las paradas clave de su mapa literario:</p>
+                            <div class="map-places">
+                                <div class="map-place-card" data-place="plaza-mayor">
+                                    <h5>Plaza Mayor / Cava de San Miguel</h5>
+                                    <p>Escenario clave de <em>Fortunata y Jacinta</em>. Aquí vive la familia de Santa Cruz y se sitúan comercios tradicionales.</p>
+                                </div>
+                                <div class="map-place-card" data-place="puerta-sol">
+                                    <h5>Puerta del Sol</h5>
+                                    <p>Punto de encuentro, debates políticos y pulso de las clases populares y medias en sus novelas contemporáneas.</p>
+                                </div>
+                                <div class="map-place-card" data-place="chica">
+                                    <h5>Barrio de Maravillas (Malasaña)</h5>
+                                    <p>Representa el Madrid menestral, de los talleres, las corralas y la pequeña burguesía esforzada por aparentar.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="panel-galdos-img">
+                        <div class="comparison-image-container">
+                            <img src="media/image34.png" alt="Esquema original de las etapas de Galdós" class="zoomable centered-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 15: Actividades Galdós -->
+            <section class="slide" id="slide-15">
+                <div class="slide-content activity-slide">
+                    <h2>Actividades</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <div class="activity-box">
+                                <div class="activity-header">
+                                    <i class="fa-solid fa-pencil"></i>
+                                    <h3>Pág. 77, nº 31</h3>
+                                </div>
+                                <p>Abre tu libro en la página 77 y realiza la actividad nº 31. Analiza el fragmento de la obra de Galdós atendiendo al reflejo de la burguesía y su afán por aparentar.</p>
+                            </div>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/cuaderno_boli.png" alt="Dibujo de un cuaderno con un boli" class="zoomable border-radius-image" style="max-width: 440px; width: 100%; border: none; box-shadow: none;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 16: El Naturalismo - La Novela (Características) -->
+            <section class="slide" id="slide-16">
+                <div class="slide-content">
+                    <h2>EL NATURALISMO. La novela</h2>
+                    <h3>CARACTERÍSTICAS DE LA NOVELA NATURALISTA</h3>
+                    <div class="tabs-container">
+                        <button class="tab-btn active" id="btn-nat-table">Tabla</button>
+                        <button class="tab-btn" id="btn-nat-img">Ver Imagen Original</button>
+                    </div>
+
+                    <div class="tab-content active" id="panel-nat-table">
+                        <div class="responsive-table-container">
+                            <table class="naturalism-table justified">
+                                <thead>
+                                    <tr>
+                                        <th>CARACTERÍSTICAS IDEOLÓGICAS</th>
+                                        <th>CARACTERÍSTICAS LITERARIAS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Punto de vista crítico</strong></p>
+                                            <p>A diferencia de los escritores realistas, los naturalistas son muy críticos con la <strong>burguesía</strong> y el capitalismo. Su objetivo es <strong>denunciar la degradación e injusticias</strong> de la sociedad burguesa; por ello, numerosas novelas se centran en el proletariado urbano y campesino con el propósito de mostrar la miseria, las infraviviendas, las enfermedades, la explotación laboral y la falta de higiene y de educación.</p>
+                                        </td>
+                                        <td>
+                                            <p><strong>Acción narrativa lenta</strong></p>
+                                            <p>Las novelas naturalistas son muy <strong>extensas</strong> y la acción es <strong>escasa</strong>, debido a las numerosas <strong>descripciones objetivas y minuciosas</strong> que se interpolan en la trama.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Intencionalidad</strong></p>
+                                            <p>Estos novelistas se consideran <strong>científicos sociales</strong> y, a partir de sus obras, pretenden <strong>reformar</strong> la sociedad. Por ello, reivindican la asistencia médica, la importancia de la educación y la mejora de las condiciones laborales de los trabajadores.</p>
+                                        </td>
+                                        <td>
+                                            <p><strong>Protagonista colectivo</strong></p>
+                                            <p>El protagonista de la novela es el <strong>personaje colectivo</strong>; es decir, un <strong>grupo social</strong> que actúa según determinadas aspiraciones, sentimientos o quejas: mineros, trabajadores fabriles, etc. Los personajes individuales padecen habitualmente malformaciones físicas, a veces debidas a <strong>enfermedades profesionales</strong>, como la silicosis de los mineros, y a <strong>taras psíquicas</strong> heredadas.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><strong>Concepción materialista de la vida</strong></p>
+                                            <p>Para los naturalistas, la conducta humana está determinada por los <strong>instintos</strong>, las leyes de la <strong>herencia</strong> (<em>Gregor Mendel</em>) y el <strong>ambiente</strong> (<em>Charles Darwin</em>).</p>
+                                        </td>
+                                        <td>
+                                            <p><strong>Lenguaje</strong></p>
+                                            <p>El narrador emplea un <strong>léxico científico</strong>, dado que escribe influido por la biología, la medicina, la teoría evolucionista de Darwin o la sociología de la época. Los personajes populares, en cambio, emplean vocablos de diferentes <strong>jergas y dialectalismos</strong>, así como el lenguaje coloquial.</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="panel-nat-img">
+                        <div class="comparison-image-container">
+                            <img src="media/image35.png" alt="Tabla original de características de la novela naturalista" class="zoomable centered-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 17: Emilia Pardo Bazán (Biografía) -->
+            <section class="slide" id="slide-17">
+                <div class="slide-content">
+                    <h2>EL NATURALISMO. La novela</h2>
+                    <h3>Emilia Pardo Bazán (1851-1921)</h3>
+                    <div class="single-text-panel justified">
+                        <ul class="spaced-list">
+                            <li>
+                                <strong>✸</strong> Fue la <strong>mejor novelista del siglo XIX</strong>.
+                            </li>
+                            <li>
+                                <strong>✸</strong> <strong>Mujer culta</strong> (primera catedrática universitaria de España) y con gran éxito social y literario.
+                            </li>
+                            <li>
+                                <strong>✸</strong> Introductora y principal difusora del <strong>Naturalismo en España</strong> a través de sus artículos en <em>La cuestión palpitante</em>.
+                            </li>
+                            <li>
+                                <strong>✸</strong> <strong>Combinó los métodos naturalistas</strong> (observación del medio y la degradación rural gallega) <strong>con la tradición cristiana</strong> y la defensa del libre albedrío frente al determinismo absoluto francés.
+                            </li>
+                            <li>
+                                <strong>✸</strong> Gran <strong>precursora del feminismo</strong>: defendió el derecho de las mujeres a una educación científica, la autonomía intelectual y la igualdad legal.
+                            </li>
+                            <li>
+                                <strong>✸</strong> <strong>OBRAS</strong> clave: <em><strong>Los pazos de Ulloa</strong></em> (1886) y <em><strong>La madre naturaleza</strong></em> (1887).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 18: Emilia Pardo Bazán - Vídeo -->
+            <section class="slide" id="slide-18">
+                <div class="slide-content video-slide">
+                    <h2>EL NATURALISMO. La novela</h2>
+                    <h3>Emilia Pardo Bazán (1851-1921)</h3>
+                    <div class="video-container-wrapper">
+                        <!-- Custom Video Player Wrapper -->
+                        <video id="video-pardo" class="html5-video" poster="media/image36.png" controls>
+                            <source src="media/media1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de vídeo.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 19: Emilia Pardo Bazán - Preguntas del vídeo -->
+            <section class="slide" id="slide-19">
+                <div class="slide-content scrollable activity-slide">
+                    <h2>EL NATURALISMO. La novela</h2>
+                    <h3>Emilia Pardo Bazán (1851-1921)</h3>
+                    <div class="activity-box text-left-align">
+                        <div class="activity-header">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <h3>Contesta las preguntas relacionadas con el vídeo:</h3>
+                        </div>
+                        
+                        <div class="questions-list justified">
+                            <div class="question-item">
+                                <p><strong>a. ¿Dónde se desarrolla <em>Los pazos de Ulloa</em>? ¿Qué dos temas se tratan en la obra?</strong></p>
+                                <div class="student-response-container">
+                                    <button class="show-suggested-btn">Ver Respuesta Sugerida</button>
+                                    <div class="suggested-answer hide">
+                                        Se desarrolla en el entorno rural y decadente de **Galicia**. Los dos temas principales son la **oposición entre la naturaleza salvaje del campo y la civilización de la ciudad**, y la **decadencia de la aristocracia rural caciquil** frente a la degradación física y moral de sus habitantes.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item">
+                                <p><strong>b. ¿Cómo son los personajes de esta novela?</strong></p>
+                                <div class="student-response-container">
+                                    <button class="show-suggested-btn">Ver Respuesta Sugerida</button>
+                                    <div class="suggested-answer hide">
+                                        Los personajes son **complejos, embrutecidos y marcados por el ambiente hostil y decadente**. Don Pedro (el Marqués de Ulloa) es un cacique rústico, dominado por sus instintos y por su criado Primitivo, mientras que Julián, el joven sacerdote sensible, representa la fragilidad de la civilización y la moral cristiana tratando de poner orden sin éxito.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="question-item">
+                                <p><strong>c. ¿Qué relación tiene Emilia Pardo Bazán con el feminismo?</strong></p>
+                                <div class="student-response-container">
+                                    <button class="show-suggested-btn">Ver Respuesta Sugerida</button>
+                                    <div class="suggested-answer hide">
+                                        Fue una **pionera y precursora fundamental del feminismo en España**. Denunció la discriminación legal, social y cultural de la mujer, abogó activamente por el **derecho de las mujeres a una educación superior y científica** idéntica a la del hombre, y reivindicó la igualdad en los círculos literarios y académicos (aunque la Real Academia Española le vetó el ingreso reiteradamente por su sexo).
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 20: Leopoldo Alas, Clarín -->
+            <section class="slide" id="slide-20">
+                <div class="slide-content">
+                    <h2>EL NATURALISMO. La novela</h2>
+                    <h3>Leopoldo Alas, Clarín (1852-1901)</h3>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> Junto con Galdós, está considerado uno de los <strong>grandes escritores del siglo XIX</strong> en la península.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> Excelente <strong>crítico literario</strong> temido por sus artículos punzantes y agudos. Posee una <strong>escasa producción literaria</strong> de novelas largas, pero de extraordinaria calidad.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> Vinculado toda su vida a <strong>Oviedo</strong> (que rebautizaría como <em>Vetusta</em> en su ficción), donde ejerció como brillante <strong>catedrático</strong> de Derecho en su universidad.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> Obra cumbre: <em><strong>La Regenta</strong></em> (1884-1885).
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/image37.png" alt="Retrato de Leopoldo Alas 'Clarín'" class="zoomable border-radius-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 21: La Regenta -->
+            <section class="slide" id="slide-21">
+                <div class="slide-content scrollable">
+                    <h2>EL NATURALISMO. La novela</h2>
+                    <h3>Leopoldo Alas, Clarín (1852-1901)</h3>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <h4>La Regenta (1884-1885)</h4>
+                            <ul class="spaced-list">
+                                <li>
+                                    <strong>✸</strong> Novela cercana al Naturalismo al exponer la <strong>falta de libertad de sus personajes para elegir su destino</strong>, condicionados por la asfixiante presión social y moral de una ciudad provinciana.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> Provocó un <strong>gran escándalo en la época por su anticlericalismo</strong> y su sátira de la Iglesia y la alta sociedad, lo que motivó que no tuviera un éxito inmediato, siendo censurada por la jerarquía eclesiástica.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>Tema</strong>: el adulterio de Ana Ozores.
+                                </li>
+                                <li>
+                                    <strong>✸</strong> <strong>Crítica a todos los estamentos de la sociedad de la época</strong>: el clero corrupto, la aristocracia decadente, la burguesía vulgar e hipócrita y los falsos intelectuales.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-panel sticky-panel">
+                            <!-- Custom HTML block styling reproducing the design box of style of La Regenta -->
+                            <div class="style-box-html justified">
+                                <h5>Estilo literario de <em>La Regenta</em></h5>
+                                <p><strong>a. Voz del narrador:</strong> se alterna el punto de vista objetivo y neutral al presentar a los personajes con momentos subjetivos. En efecto, se hace uso de la crítica burlesca y del lenguaje poético embellecedor.</p>
+                                <p><strong>b. Lengua literaria:</strong> se combina la riqueza léxica del narrador con la reproducción del habla popular de los personajes.</p>
+                                <p><strong>c. Tipo de discurso:</strong> uso del estilo indirecto libre y del monólogo interior para describir la psicología de los personajes.</p>
+                            </div>
+                            <div class="original-box-link">
+                                <img src="media/image38.png" alt="Recuadro de estilo original" class="zoomable border-radius-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 22: Clarín - Vídeo -->
+            <section class="slide" id="slide-22">
+                <div class="slide-content video-slide">
+                    <h2>Leopoldo Alas, Clarín (1852-1901)</h2>
+                    <div class="video-container-wrapper">
+                        <video id="video-clarin" class="html5-video" poster="media/image39.png" controls>
+                            <source src="media/media2.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de vídeo.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 23: Actividades Clarín -->
+            <section class="slide" id="slide-23">
+                <div class="slide-content activity-slide">
+                    <h2>Actividades</h2>
+                    <div class="two-panel">
+                        <div class="text-panel justified">
+                            <div class="activity-box">
+                                <div class="activity-header">
+                                    <i class="fa-solid fa-comments"></i>
+                                    <h3>Comentario de texto pág. 81</h3>
+                                </div>
+                                <p>Realiza <strong>todas las actividades</strong> correspondientes al comentario de texto sobre <em>La Regenta</em> que encontrarás en la página 81 de tu libro de texto.</p>
+                                <p class="focus-question"><strong>Concepto a debatir en clase:</strong> Identifica cómo se refleja el "estilo indirecto libre" en el fragmento leído y qué aporta a la empatía del lector con Ana Ozores.</p>
+                            </div>
+                        </div>
+                        <div class="image-panel">
+                            <img src="media/cuaderno_boli.png" alt="Dibujo de un cuaderno con un boli" class="zoomable border-radius-image" style="max-width: 440px; width: 100%; border: none; box-shadow: none;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Custom Image/Video Fullscreen Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button id="close-lightbox-btn" class="lightbox-close-btn" title="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+        <div id="lightbox-content-wrapper" class="lightbox-content-wrapper">
+            <!-- Lightbox dynamic element will be appended here (img or video) -->
+        </div>
+    </div>
+
+    <!-- Presentation Progress Controls -->
+    <footer class="app-footer">
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="footer-info">
+            <div class="slide-counter"><span id="current-slide-num">1</span> / <span id="total-slide-num">23</span></div>
+            <div class="shortcuts-info"><i class="fa-solid fa-keyboard"></i> Usa las Flechas <kbd>←</kbd> <kbd>→</kbd> o <kbd>Espacio</kbd></div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
